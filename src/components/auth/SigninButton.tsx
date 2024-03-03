@@ -8,17 +8,16 @@ const SigninButton = () => {
   const { data: session } = useSession()
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-1">
       {session && session.user ? (
         <>
           <p className="text-xl text-primary">
-            <Link
-              href={'/profile'}
-            >{`${session.user.firstName} ${session.user.lastName}`}</Link>
+            Logged in -
+            <Link href={'/profile'}>{`${session.user.firstName} `}</Link>
           </p>
 
           <Link
-            className="text-xl text-sky-500 transition-colors hover:text-sky-600"
+            className="pl-12 text-xl text-sky-500 transition-colors hover:text-sky-600"
             href={'/api/auth/signout'}
           >
             Sign Out
