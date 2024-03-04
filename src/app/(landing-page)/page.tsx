@@ -1,7 +1,15 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { authOptions } from '@/lib/auth'
+import { getServerSession } from 'next-auth'
+import { redirect } from 'next/navigation'
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const session = await getServerSession(authOptions)
+
+  if (session) {
+    return redirect('/dashboard')
+  }
   return (
     <section className="flex h-[90vh] items-center justify-center bg-background">
       <div className="relative mx-auto w-full max-w-7xl items-center px-5 md:px-12 lg:px-16 ">

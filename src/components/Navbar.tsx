@@ -3,9 +3,6 @@ import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 import { ThemeToggle } from './ThemeToggle'
 import SigninButton from './auth/SigninButton'
-import { UserNav } from './dashboard/UserNav'
-import { Button } from './ui/button'
-import { signIn } from 'next-auth/react'
 
 export async function Navbar() {
   const session = await getServerSession(authOptions)

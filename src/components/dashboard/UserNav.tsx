@@ -9,19 +9,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import {
-  BookDashed,
-  CreditCard,
-  DoorClosed,
-  Home,
-  Settings,
-  User2,
-} from 'lucide-react'
+import { BookDashed, CreditCard, LogOut, Settings, User2 } from 'lucide-react'
 
 import Link from 'next/link'
 
 export const navItems = [
-  { name: 'Home', href: '/', icon: Home },
   { name: 'Dashboard', href: '/dashboard', icon: BookDashed },
   { name: 'Settings', href: '/dashboard/settings', icon: Settings },
   { name: 'Billing', href: '/dashboard/billing', icon: CreditCard },
@@ -75,9 +67,12 @@ export function UserNav({
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem className="flex w-full items-center " asChild>
+        <DropdownMenuItem className="flex w-full items-center gap-2" asChild>
           <Button asChild variant="outline">
-            <Link href={'/api/auth/signout'}>Sign Out</Link>
+            <Link href={'/api/auth/signout'}>
+              <LogOut />
+              Sign Out
+            </Link>
           </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
