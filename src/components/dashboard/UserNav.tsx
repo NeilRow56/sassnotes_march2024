@@ -15,6 +15,7 @@ import {
   DoorClosed,
   Home,
   Settings,
+  User2,
 } from 'lucide-react'
 
 import Link from 'next/link'
@@ -41,7 +42,9 @@ export function UserNav({
         <Button variant="ghost" className="relative h-10 w-10 rounded-full">
           <Avatar className="h-10 w-10 rounded-full">
             <AvatarImage src={imageUrl} alt="" />
-            <AvatarFallback>Jan</AvatarFallback>
+            <AvatarFallback>
+              <User2 />
+            </AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>

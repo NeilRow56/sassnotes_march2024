@@ -24,7 +24,9 @@ export async function Navbar() {
     <nav className=" flex h-[10vh] items-center border-b bg-slate-200 dark:bg-slate-700">
       <div className="container mx-auto  flex items-center justify-between">
         <Link href="/" className="">
-          <h1 className="text-3xl font-bold">Sass Notes</h1>
+          <h1 className="text-3xl font-bold">
+            WpFile<span className="text-primary">Notes</span>
+          </h1>
         </Link>
 
         <div className="flex-1 pl-40 text-center">
