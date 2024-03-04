@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { signIn, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import { UserNav } from '../dashboard/UserNav'
 
 const SigninButton = () => {
   const { data: session } = useSession()
@@ -11,17 +12,11 @@ const SigninButton = () => {
     <div className="flex items-center gap-1">
       {session && session.user ? (
         <>
-          <p className="text-xl text-primary">
-            Logged in -
-            <Link href={'/profile'}>{`${session.user.firstName} `}</Link>
-          </p>
-
-          <Link
-            className="pl-12 text-xl text-sky-500 transition-colors hover:text-sky-600"
-            href={'/api/auth/signout'}
-          >
-            Sign Out
-          </Link>
+          <UserNav
+            name={session.user.firstName}
+            email={session.user.email}
+            imageUrl={session.user.imageUrl}
+          />
         </>
       ) : (
         <div className="flex items-center gap-4">

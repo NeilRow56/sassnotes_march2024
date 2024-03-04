@@ -1,10 +1,14 @@
-import { SiteNavbar } from '@/components/dashboard/SiteNavbar'
+import { DashboardNav } from '@/components/dashboard/DashboardNav'
 
 const SiteLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="h-full bg-slate-100 dark:bg-slate-900">
-      <SiteNavbar />
-      <main className="">{children}</main>
+    <div className="mt-10 flex flex-col space-y-6">
+      <div className="container grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
+        <aside className="hidden w-[200px] flex-col md:flex">
+          <DashboardNav />
+        </aside>
+        <main>{children}</main>
+      </div>
     </div>
   )
 }

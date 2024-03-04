@@ -3,6 +3,9 @@ import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 import { ThemeToggle } from './ThemeToggle'
 import SigninButton from './auth/SigninButton'
+import { UserNav } from './dashboard/UserNav'
+import { Button } from './ui/button'
+import { signIn } from 'next-auth/react'
 
 export async function Navbar() {
   const session = await getServerSession(authOptions)
@@ -30,13 +33,9 @@ export async function Navbar() {
         <div className="flex items-center gap-x-5">
           <ThemeToggle />
 
-          {!user?.id ? (
-            <div>User </div>
-          ) : (
-            <div className="flex items-center gap-x-5">
-              <SigninButton />
-            </div>
-          )}
+          <div className="flex items-center gap-x-5">
+            <SigninButton />
+          </div>
         </div>
       </div>
     </nav>

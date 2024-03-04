@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { ArrowBigLeftIcon } from 'lucide-react'
 import Link from 'next/link'
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
@@ -8,10 +9,11 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
           
           text-center  dark:bg-slate-800"
     >
-      <div className="m-10 flex max-w-sm  justify-center">
+      <div className="m-10 flex max-w-sm  items-center justify-center">
+        <ArrowBigLeftIcon />
         <Button
           size="sm"
-          variant="outline"
+          variant="ghost"
           asChild
           className="text-muted-foreground"
         >
